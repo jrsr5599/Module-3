@@ -29,7 +29,7 @@ Module 3 challenge
 
 * Coding with Javascript for Dummies book.
 
-* Google Search on password generator codes. 
+* Google Search on password generator codes. Used t-starkw as a guide to the code. 
 
 ## Assets
 

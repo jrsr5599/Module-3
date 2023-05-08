@@ -1,24 +1,24 @@
 // Assignment code here
 
 var enter;
-var confirmNumber;
-var confirmCharacter;
-var confirmUppercase;
-var confirmLowercase;
+var confirmedNumber;
+var confirmedCharacter;
+var confirmedUppercase;
+var confirmedLowercase;
 
-character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 space = [];
 
 var choices;
 
-var toUpper = function (x) {
+var Uppercase = function (x) {
     return x.toUpperCase();
 };
 
-alpha2 = alpha.map(toUpper);
+alpha2 = alpha.map(Uppercase);
 
 var get = document.querySelector("#generate");
 
@@ -36,66 +36,66 @@ function generatePassword() {
 
     } else {
         // User is prompted to answer more questions
-        confirmNumber = confirm("Will this contain numbers?");
-        confirmCharacter = confirm("Will this contain special characters?");
-        confirmUppercase = confirm("Will this contain Uppercase letters?");
-        confirmLowercase = confirm("Will this contain Lowercase letters?");
+        confirmedNumber = confirm("Will this contain numbers?");
+        confirmedCharacter = confirm("Will this contain special characters?");
+        confirmedUppercase = confirm("Will this contain Uppercase letters?");
+        confirmedLowercase = confirm("Will this contain Lowercase letters?");
     };
 
     
-    if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
+    if (!confirmedCharacter && !confirmedNumber && !confirmedUppercase && !confirmedLowercase) {
         choices = alert("You must choose a criteria!");
 
     }
     
-    else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+    else if (confirmedCharacter && confirmedNumber && confirmedUppercase && confirmedLowercase) {
 
-        choices = character.concat(number, alpha, alpha2);
+        choices = characters.concat(numbers, alpha, alpha2);
     }
     
-    else if (confirmCharacter && confirmNumber && confirmUppercase) {
-        choices = character.concat(number, alpha2);
+    else if (confirmedCharacter && confirmedNumber && confirmedUppercase) {
+        choices = characters.concat(numbers, alpha2);
     }
-    else if (confirmCharacter && confirmNumber && confirmLowercase) {
-        choices = character.concat(number, alpha);
+    else if (confirmedCharacter && confirmedNumber && confirmedLowercase) {
+        choices = characters.concat(numbers, alpha);
     }
-    else if (confirmCharacter && confirmLowercase && confirmUppercase) {
-        choices = character.concat(alpha, alpha2);
+    else if (confirmedCharacter && confirmedLowercase && confirmedUppercase) {
+        choices = characters.concat(alpha, alpha2);
     }
-    else if (confirmNumber && confirmLowercase && confirmUppercase) {
-        choices = number.concat(alpha, alpha2);
+    else if (confirmedNumber && confirmedLowercase && confirmedUppercase) {
+        choices = numbers.concat(alpha, alpha2);
     }
     
-    else if (confirmCharacter && confirmNumber) {
-        choices = character.concat(number);
+    else if (confirmedCharacter && confirmedNumber) {
+        choices = characters.concat(numbers);
 
-    } else if (confirmCharacter && confirmLowercase) {
-        choices = character.concat(alpha);
+    } else if (confirmedCharacter && confirmedLowercase) {
+        choices = characters.concat(alpha);
 
-    } else if (confirmCharacter && confirmUppercase) {
-        choices = character.concat(alpha2);
+    } else if (confirmedCharacter && confirmedUppercase) {
+        choices = characters.concat(alpha2);
     }
-    else if (confirmLowercase && confirmNumber) {
-        choices = alpha.concat(number);
+    else if (confirmedLowercase && confirmedNumber) {
+        choices = alpha.concat(numbers);
 
-    } else if (confirmLowercase && confirmUppercase) {
+    } else if (confirmedLowercase && confirmedUppercase) {
         choices = alpha.concat(alpha2);
 
-    } else if (confirmNumber && confirmUppercase) {
-        choices = number.concat(alpha2);
+    } else if (confirmedNumber && confirmedUppercase) {
+        choices = numbers.concat(alpha2);
     }
     
-    else if (confirmCharacter) {
-        choices = character;
+    else if (confirmedCharacter) {
+        choices = characters;
     }
-    else if (confirmNumber) {
-        choices = number;
+    else if (confirmedNumber) {
+        choices = numbers;
     }
-    else if (confirmLowercase) {
+    else if (confirmedLowercase) {
         choices = alpha;
     }
     
-    else if (confirmUppercase) {
+    else if (confirmedUppercase) {
         choices = space.concat(alpha2);
     };
 
